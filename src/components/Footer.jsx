@@ -50,8 +50,8 @@ const Footer = () => {
           
         </nav>
       </div> */}
-      <div className="flex justify-evenly">
-        <div className="flex gap-4  items-center">
+      <div className="sm:flex-row flex flex-col justify-center sm:justify-evenly">
+        <div className="flex gap-4   items-center">
           <button onClick={scrollToTop} className="hover:text-zinc-400">
             Home
           </button>

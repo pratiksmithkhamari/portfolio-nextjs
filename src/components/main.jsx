@@ -2,6 +2,7 @@
 import { Libre_Baskerville } from "next/font/google";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const Main = () => {
             animate="show"
             className={`sm:text-6xl text-3xl sm:ml-28 ml-0 sm:my-0 my-0 w-[80%] mx-0 sm:mx-auto font-bold text-zinc-300 ${libreBaskerville.className}`}
           >
-            Hi, I'm Pratiksmith Khamari
+            Hi, I'm <span className="text-green-600">Pratiksmith</span> Khamari
           </motion.h2>
           <motion.p
             variants={animatetext(0.8)}
@@ -41,9 +42,10 @@ const Main = () => {
               variants={animatetext(0.9)}
               initial="hidden"
               animate="show"
+              
               className="bg-zinc-300 rounded-sm shadow-xl  hover:bg-zinc-200 hover:shadow-2xl tracking-tight text-slate-800 p-4 text-xl font-bold"
             >
-              Let's Connect
+              <Link href={'/contact'}>Let's Connect</Link>
             </motion.button>
           </div>
         </div>
