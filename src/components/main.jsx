@@ -10,7 +10,7 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 const Main = () => {
-  const animatetext=(delay) => ({
+  const animatetext = (delay) => ({
     hidden: { opacity: 0, x: -100 },
     show: { opacity: 1, x: 0, transition: { delay: delay, duration: 0.7 } },
   });
@@ -42,10 +42,9 @@ const Main = () => {
               variants={animatetext(0.9)}
               initial="hidden"
               animate="show"
-              
               className="bg-zinc-300 rounded-sm shadow-xl  hover:bg-zinc-200 hover:shadow-2xl tracking-tight text-slate-800 p-4 text-xl font-bold"
             >
-              <Link href={'/contact'}>Let's Connect</Link>
+              <Link href={"/contact"}>Let's Connect</Link>
             </motion.button>
           </div>
         </div>
@@ -61,12 +60,16 @@ const Main = () => {
               onHoverStart={(e) => {}}
               onHoverEnd={(e) => {}}
               initial={{ opacity: 0, x: 200 }}
-              animate={{ opacity: 1, x: 0, transition: { delay: 0.8,duration:0.7 } }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { delay: 0.8, duration: 0.7 },
+              }}
               height={300}
               width={300}
               alt="Profile Image"
               className="rounded-md cursor-pointer sm:max-h-[450px] max-h-80 sm:min-w-[350px] min-w-56"
-              src={"/profileimg.JPG"}
+              src={"/my-image.JPG"}
             ></motion.img>
           </motion.div>
         </div>

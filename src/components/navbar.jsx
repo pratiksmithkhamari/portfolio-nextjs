@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import React from "react";
@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["700", "700"], // specify the weights you need
+  weight: ["700"], 
 });
 
 const robotoSlab = Roboto_Slab({
@@ -16,34 +16,39 @@ const robotoSlab = Roboto_Slab({
 });
 
 const Navbar = () => {
-  const pathName = usePathname()
+  const pathName = usePathname();
   console.log(pathName);
-  
+
   const data = [
     {
       id: 1,
       name: "Home",
       link: "/",
+      className:
+        "bg-green-600 p-2 rounded-lg active:bg-green-700 px-3 hover:!text-zinc-100 ",
     },
     {
       id: 2,
-      name: "About",
-      link: "/about",
+      name: "Blog",
+      link: "https://blogging-site-next-js.vercel.app/",
+      className:
+        "bg-green-600 p-2 rounded-lg active:bg-green-700 px-3 hover:!text-zinc-100 ",
     },
     {
       id: 3,
       name: "Projects",
       link: "/projects",
+      className:
+        "bg-green-600 p-2 rounded-lg active:bg-green-700 px-3 hover:!text-zinc-100 ",
     },
     {
       id: 4,
       name: "Contact",
       link: "/contact",
-      className:"bg-green-600 p-2 rounded-lg active:bg-green-700 px-3 hover:text-zinc-100 "
+      className:
+        "bg-green-600 p-2 rounded-lg active:bg-green-700 px-3 hover:!text-zinc-100 ",
     },
   ];
-     
-   
 
   return (
     <div className=" h-24 bg-slate-600 text-white justify-between  flex gap-6  item-center">
@@ -59,15 +64,15 @@ const Navbar = () => {
         {data.map((data) => {
           return (
             <>
-              <Link href={data.link}>
+              <Link href={data.link} key={data.id}>
                 <h2
-                  className={`text-white hidden sm:block text-xl cursor-pointer hover ${data.className} ${libreBaskerville.className}`}
+                  className={`text-white hidden sm:block text-xl cursor-pointer hover:underline hover:text-green-600 ${
+                    pathName == data.link ? data.className : ""
+                  }  ${libreBaskerville.className}`}
                   key={data?.id}
-                  
                 >
                   {data?.name}
                 </h2>
-
               </Link>
             </>
           );
